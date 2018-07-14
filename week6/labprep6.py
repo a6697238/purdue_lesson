@@ -11,17 +11,17 @@ from graphics import *
 def main():
     win = GraphWin("Shapes", 400, 400)
     win.setBackground("light grey")
-    oldPoint = Point(200, 200)
+    oldPoint = Point(200, 200)  #save old position
     c = Circle(oldPoint, 30)
     c.setFill('blue')
     c.draw(win)
     for time in range(0, 5):
-        newPoint = win.getMouse()  # pause for click in window
+        newPoint = win.getMouse()  # #save new position
         movCircle(c, oldPoint, newPoint)
         oldPoint = newPoint
 
 
-# move the circle to new place smooth
+# movCircle() function move the circle to new place smooth
 def movCircle(c, start, des):
     moveX = des.getX() - start.getX()
     moveY = des.getY() - start.getY()
